@@ -13,6 +13,7 @@ pillar.example file:
     roles:
       - role1
       - role2
-      - role3```
+      - role3
+ ```
 Define each Salt client's roles as seen in the example above. If changes take place, this formula restarts the salt-minion service. If the hostname is not defined, no changes will take place. 
 You must also define your salt master on the hostname line. 
