@@ -1,0 +1,6 @@
+minion:
+  sample.domain.com:
+    roles:
+      - role1
+      - role2
+      - role3

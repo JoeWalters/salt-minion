@@ -1,0 +1,13 @@
+
+{% set minion = {
+    'lookup': salt['grains.filter_by']({
+        'Debian': {
+            'path': '/etc/salt/minion',
+            'service': 'salt-minion',
+        },
+        'RedHat': {
+            'path': '/etc/salt/minion',
+            'service': 'salt-minion',
+        }
+    })
+} %}
