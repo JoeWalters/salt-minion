@@ -1,6 +1,6 @@
 ## This file is managed by Salt. Only make changes on the Salt master.
 {% set hostname=grains['id'] %}
-master: is-salt.ischool.uw.edu
+master: {{ minion.hostname }}
 
 grains:
   roles:{% for role in pillar['minion'][hostname]['roles'] %}
