@@ -1,4 +1,5 @@
 minion:
+  hostname: salt.domain.com
   sample.domain.com:
     roles:
       - role1
