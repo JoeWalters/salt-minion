@@ -17,12 +17,15 @@ salt-minion:
     - name: {{ minion.lookup.service }}
     - require:
       - file: {{ minion.lookup.path }}
+at:
+  pkg.installed: []
 
 restart-salt-minion:
-  cmd.run:
-    - name: 'salt-call --local service.restart salt-minion'
-    - bg: True
+  cmd.wait:
+    - name: echo salt-call --local service.restart salt-minion | at now + 1 minute
     - order: last
-    - onchanges:
+    - require:
+      - pkg: at
+    - watch:
       - file: salt-minion
       - pkg: salt-minion
